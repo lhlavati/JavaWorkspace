@@ -1,7 +1,16 @@
 package edunova;
 
+import javax.swing.JOptionPane;
+
 public class Zadatak5 {
 
-	//Unijeti logièku vrijednost i ispisati je
-	
+	public static void main(String[] args) {
+		
+		// Unijeti logièku vrijednost i ispisati je
+		
+		boolean vrijednost = Boolean.parseBoolean(JOptionPane.showInputDialog("Logièka vrijednost:"));
+		
+			System.out.println(vrijednost);
+		
+	}
 }
