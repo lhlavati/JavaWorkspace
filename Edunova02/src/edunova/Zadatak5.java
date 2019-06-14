@@ -10,7 +10,17 @@ public class Zadatak5 {
 		
 		boolean vrijednost = Boolean.parseBoolean(JOptionPane.showInputDialog("Logièka vrijednost:"));
 		
-			System.out.println(vrijednost);
+		System.out.println(vrijednost);
 		
+		
+		/*String unos = JOptionPane.showInputDialog("Logièka vrijednost:");
+		
+		if (unos == "true" || unos == "false") {
+			boolean vrijednost = Boolean.parseBoolean(unos);
+			System.out.println(vrijednost);
+		}else {
+			JOptionPane.showMessageDialog(null, "Pogreška!");
+		}
+		*/
 	}
 }
