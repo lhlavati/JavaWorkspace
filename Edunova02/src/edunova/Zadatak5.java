@@ -13,11 +13,11 @@ public class Zadatak5 {
 		System.out.println(vrijednost);
 		*/
 		
-		var unos = JOptionPane.showInputDialog("Logièka vrijednost:");
+		String unos = JOptionPane.showInputDialog("Logièka vrijednost:");
 		
-		if (unos == "true" && unos == "false") {
+		if (unos == "true" || unos == "false") {
 			boolean vrijednost = Boolean.parseBoolean(unos);
-			System.out.println(vrijednost);
+			JOptionPane.showMessageDialog(null, vrijednost);
 		}else {
 			JOptionPane.showMessageDialog(null, "Pogreška!");
 		}
