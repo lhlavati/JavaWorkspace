@@ -20,5 +20,17 @@ public class VjezbaIfElsePetlje {
 			prvi /= 3;
 			System.out.println("Veći broj pomnožen sa 2: " + drugi + "\nManji broj podjeljen sa 3: " + prvi);
 		}
+		
+		System.out.println("\n    ZADATAK 2    \n");
+		// 	Učitati dva broja. Ako je jedan veći od nule ispisati "Barem je jedan broj veći od 0" inače ispisati sumu oba broja.
+		int prviBroj = Integer.parseInt(JOptionPane.showInputDialog("Unesite prvi broj:"));
+		int drugiBroj = Integer.parseInt(JOptionPane.showInputDialog("Unesite drugi broj:"));
+		
+		if(prviBroj > 0 || drugiBroj > 0) {
+			System.out.println("Barem je jedan broj veći od 0");
+		}else {
+			int suma = prviBroj + drugiBroj;
+			System.out.println("Suma dva broja je: " + suma);
+		}
 	}
 }
