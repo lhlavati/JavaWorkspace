@@ -5,24 +5,24 @@ public class InkrementDekrement {
 	public static void main(String[] args) {
 		int i=0;
 		
-		//samouveæavanje vrijednosti varijable
-		i=i+1; // prvo se izraèuna desna strana pa dodjeli ljevoj
+		//samouveï¿½avanje vrijednosti varijable
+		i=i+1; // prvo se izraï¿½una desna strana pa dodjeli ljevoj
 		
-		i+=1; //ekvivalent gornjem izrazu - uveæa za 1
+		i+=1; //ekvivalent gornjem izrazu - uveï¿½a za 1
 		
-		i+=3; // uveæati za 3
+		i+=3; // uveï¿½ati za 3
 		
-		i++; //uveæava za 1 - inkrement
+		i++; //uveï¿½ava za 1 - inkrement
 		
 		//kod inkrementa postoji razlika BITNA
 		++i;
 		
 		System.out.println(i);
 		
-		//prvo uveæa pa koristi
+		//prvo uveï¿½a pa koristi
 		System.out.println(++i);
 		
-		//prvo koristi pa uveæa
+		//prvo koristi pa uveï¿½a
 		System.out.println(i++);
 		
 		System.out.println(i);
@@ -32,8 +32,8 @@ public class InkrementDekrement {
 		--i;
 		i--;
 		
-		//domaæa zadaæa
-		//BEZ IZVOÐENJA NA RAÈUNALU naæi rezultat
+		//domaï¿½a zadaï¿½a
+		//BEZ IZVOï¿½ENJA NA RAï¿½UNALU naï¿½i rezultat
 		
 		int t=2,k=3;
 		t=k--; //t = 3, k=2
@@ -41,12 +41,6 @@ public class InkrementDekrement {
 		k++;t--;// k=7, t=3
 		t=--k+ ++t; //k=6, t = 10
 		System.out.println(t++ + " - " + --k);
-		
-		
-		
-		
-		
-		
 		
 	}
 
