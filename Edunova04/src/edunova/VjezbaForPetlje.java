@@ -34,5 +34,22 @@ public class VjezbaForPetlje {
 		int sredina = c / broj;
 		System.out.println(sredina);
 		
+		System.out.println("\nZADATAK 3\n");
+		// Napisati program za ispis pravouglog trougla kao na slici sa željenim brojem redova
+		
+//		 	x
+//		 	x x
+//		 	x x x
+//		 	x x x x
+//		 	x x x x x
+//		 	x x x x x x
+//		 	x x x x x x x
+		  	
+		for(int i = 1; i <= 7; i++) {
+			for(int j = 0; j < i; j++) {
+				System.out.print("x ");	
+			}
+			System.out.println();
+		}	
 	}
 }
