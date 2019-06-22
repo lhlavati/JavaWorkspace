@@ -33,12 +33,25 @@ public class VjezbaInkrementDekrement {
 		System.out.println("                  " + ++a + " ~ " + b--); // a = 5, b = 0
 		System.out.println("                ZADATAK 2              ");
 		int x = 1, y = 2, z = 3; 
-		x = ++x - z-- + x; // x = 0, z = 3*-, y = 2
-		y += y + --z; // x = 0, y = 5, z = 1 
-		z = y-- - z++; // z = 4*+, y = 5*-, x = 0
-		x = z++ - --y + ++x + x; // x = 0, z = 5*+, y = 3
-		z -= --z + ++x - --y; // z = 0, x = 5, y = 2
-		z++;--z;++x;x++; // z = 0, x = 7, y = 2
+		x = ++x - z-- + x; 
+	//  x = 2   - 3*- + 2; 
+	//	x = 1, z = 2, y = 2
+		y += y + --z; 
+	//  y = 2 + 2 + 1;
+	//  y = 5, x = 1, z = 1
+		z = y-- - z++; 
+	//  z = 5*- - 1*+;
+	//  z = 4, x = 1, y = 4
+		x = z++ - --y + ++x + x; 
+	//  x = 4*+ -  3  +  2  + 2;
+	//  x = 6, z = 5, y = 3
+		z -= --z + ++x - --y; 
+	//  z = 5 - 4 + 7  - 2 
+	//  z = 6, y = 2, x = 7
+		z++;--z;++x;x++; 
+	//  z = 6; z = 7
+	//  z = 6; x = 8;
+	//  x = 9, z = 6, y = 2
 		System.out.println("                  X = " + x + "\n                  Y = " + y + "\n                  Z = " + z); // NE VALJA PONOVO!!
 		
 	}
