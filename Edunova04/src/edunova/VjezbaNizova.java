@@ -1,5 +1,7 @@
 package edunova;
 
+import java.util.Arrays;
+
 import javax.swing.JOptionPane;
 
 public class VjezbaNizova {
@@ -78,24 +80,47 @@ public class VjezbaNizova {
 //		}
 //		System.out.println("Suma članova niza manjih od aritmetičke sredine s neparnim indeksima je: " + suma);
 //		
-		System.out.println("\nZadatak4\n");
-		// Učitati članove i naći najmanji član niza.
-		 
-		int clanovi = Integer.parseInt(JOptionPane.showInputDialog("Unesite broj clanova niza:"));
+//		System.out.println("\nZadatak4\n");
+//		// Učitati članove i naći najmanji član niza.
+//		 
+//		int clanovi = Integer.parseInt(JOptionPane.showInputDialog("Unesite broj clanova niza:"));
+//		
+//		int[] niz = new int [clanovi];
+//		
+//		for (int i = 0; i < niz.length; i++) {
+//			niz[i] = Integer.parseInt(JOptionPane.showInputDialog("Unesite clanove niza"));
+//		}
+//		int min = niz[0];
+//		for (int i = 0; i < niz.length; i++) {
+//			if(min > niz[i]) {
+//				min = niz[i];
+//			}
+//		}
+//		System.out.println("Najmanji član niza je: " + min);
+//		
+		System.out.println("\nZadatak5\n");
+		// Učitati niz A od n članova i naći koliko ima članova koji su manji od prvog člana, a koliko članova koji su veći od zadnjeg člana niza.
 		
-		int[] niz = new int [clanovi];
+		int n = Integer.parseInt(JOptionPane.showInputDialog("Unesite broj članova:"));
+		int[] A = new int [n];
 		
-		for (int i = 0; i < niz.length; i++) {
-			niz[i] = Integer.parseInt(JOptionPane.showInputDialog("Unesite clanove niza"));
+		for (int i = 0; i < A.length; i++) {
+			A[i] = Integer.parseInt(JOptionPane.showInputDialog("Unesite članove niza:"));
 		}
-		int min = niz[0];
-		for (int i = 0; i < niz.length; i++) {
-			if(min > niz[i]) {
-				min = niz[i];
+		System.out.println(Arrays.toString(A));
+		int manji = 0;
+		int veci = 0;
+		
+		for (int i = 0; i < A.length; i++) {
+			if(A[i] < A[0]) {
+				manji++;
 			}
 		}
-		System.out.println("Najmanji član niza je: " + min);
-		
-		System.out.println("\nZadatak5\n");
+		for (int i = 0; i < A.length; i++) {
+			if(A[i] > A[A.length - 1]) {
+				veci++;
+			}
+		}
+		System.out.println("Broj članova koji su manji od prvog člana: " + manji + "\nBroj članova koji su veći od zadnjeg člana: " + veci);
 	}
 }
