@@ -29,9 +29,21 @@ public class CiklickaTablica {
 		
 		while (broj < maxBroj) {
 			
-			while (m[r][k] == 1) {
+			while (m[r][k] == 1 && k >= 0) {
 				m[r][k--] = broj++;
 			}
+			while (r >= 0) {
+				m[r--][k] = broj++;
+			}
+			while (k <= k) {
+				m[r][k++] = broj++;
+			}
+			while (r <= r) {
+				m[r++][k] = broj++;
+			}
+			r--;
+			k--;
+			
 		}
 	}
 }
