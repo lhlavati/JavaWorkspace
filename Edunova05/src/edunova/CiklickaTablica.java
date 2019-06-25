@@ -21,5 +21,17 @@ public class CiklickaTablica {
 			System.out.println();
 		}
 		
+		int maxBroj = (r * k);
+		int broj = 1;
+		r--;
+		k--;
+		m[r][k] = 1;
+		
+		while (broj < maxBroj) {
+			
+			while (m[r][k] == 1) {
+				m[r][k--] = broj++;
+			}
+		}
 	}
 }
