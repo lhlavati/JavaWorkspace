@@ -16,6 +16,8 @@ public class CiklickaTablica {
 		int maxBroj = (r * k);
 		r--;
 		k--;
+		int rPoc = r;
+		int kPoc = k;
 		int broj = 1;
 		int rMin = 0;
 		int rMax = r;
@@ -28,15 +30,19 @@ public class CiklickaTablica {
 			while (r == rMax && k > kMin) { // lijevo
 				m[r][k--] = broj++;			 // m [4][4--] = 1++; ... m[4][0] = 5;
 			}
+			kPoc++;
 			while (r > rMin) {				 // gore
 				m[r--][k] = broj++;			 // m[4--][0] = 5; ... m[0][0] = 9;
 			}
+			rPoc++;
 			while (k < kMax) {				 // desno
 				m[r][k++] = broj++;			 // m[0][0++] = 9; ... m[0][4] = 13;
 			}
+			kPoc--;
 			while (r < rMax - 1) {			// dolje
 				m[r++][k] = broj++;			// m[0++][4] = 13; ... m[3][4] = 16;
 			}
+			rPoc--;
 			
 			rMin++;
 			rMax--;
@@ -45,15 +51,15 @@ public class CiklickaTablica {
 			
 		}
 		
-		r += 3;
-		k += 3;
-		
+		rPoc++;
+		kPoc++;
+				
 		if(maxBroj % 2 != 0) {
 			m[r/2][k/2] = maxBroj;
 		}
 		
-		for (int i = 0; i < r; i++) { 
-			for (int j = 0; j < k; j++) {
+		for (int i = 0; i < rPoc; i++) { 
+			for (int j = 0; j < kPoc; j++) {
 				System.out.print(m[i][j] + "\t");
 				
 			}
