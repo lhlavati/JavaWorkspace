@@ -13,37 +13,50 @@ public class CiklickaTablica {
 		
 		int [][] m = new int [r][k];
 		
-		// ispisivanje prazne matrice
-		for (int i = 0; i < r; i++) { 
-			for (int j = 0; j < k; j++) {
-				System.out.print(m[i][j] + " ");
-			}
-			System.out.println();
-		}
-		
 		int maxBroj = (r * k);
-		int broj = 1;
 		r--;
 		k--;
-		m[r][k] = 1;
+		int broj = 1;
+		int rMin = 0;
+		int rMax = r;
+		int kMin = 0;
+		int kMax = k;
+		
 		
 		while (broj < maxBroj) {
 			
-			while (m[r][k] == 1 && k >= 0) {
-				m[r][k--] = broj++;
+			while (r == rMax && k > kMin) { // lijevo
+				m[r][k--] = broj++;			 // m [4][4--] = 1++; ... m[4][0] = 5;
 			}
-			while (r >= 0) {
-				m[r--][k] = broj++;
+			while (r > rMin) {				 // gore
+				m[r--][k] = broj++;			 // m[4--][0] = 5; ... m[0][0] = 9;
 			}
-			while (k <= k) {
-				m[r][k++] = broj++;
+			while (k < kMax) {				 // desno
+				m[r][k++] = broj++;			 // m[0][0++] = 9; ... m[0][4] = 13;
 			}
-			while (r <= r) {
-				m[r++][k] = broj++;
+			while (r < rMax - 1) {				// dolje
+				m[r++][k] = broj++;			// m[0++][4] = 13; ... m[3][4] = 16;
 			}
-			r--;
-			k--;
+			rMin++;
+			rMax--;
+			kMin++;
+			kMax--;
+			
+			
 			
 		}
+		r += 3;
+		k += 3;
+		
+		for (int i = 0; i < r; i++) { 
+			if(i < 5) {
+				System.out.println(" ");
+			}
+			for (int j = 0; j < k; j++) {
+				System.out.print(m[i][j] + "    ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 }
