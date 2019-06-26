@@ -55,7 +55,9 @@ public class CiklickaTablica {
 		kPoc++;
 				
 		if(maxBroj % 2 != 0) {
-			m[r/2][k/2] = maxBroj;
+			m[rPoc/2][kPoc/2] = maxBroj;
+		}else {
+			m[r][k] = maxBroj;
 		}
 		
 		for (int i = 0; i < rPoc; i++) { 
