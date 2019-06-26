@@ -34,29 +34,31 @@ public class CiklickaTablica {
 			while (k < kMax) {				 // desno
 				m[r][k++] = broj++;			 // m[0][0++] = 9; ... m[0][4] = 13;
 			}
-			while (r < rMax - 1) {				// dolje
+			while (r < rMax - 1) {			// dolje
 				m[r++][k] = broj++;			// m[0++][4] = 13; ... m[3][4] = 16;
 			}
+			
 			rMin++;
 			rMax--;
 			kMin++;
 			kMax--;
 			
-			
-			
 		}
+		
 		r += 3;
 		k += 3;
 		
-		for (int i = 0; i < r; i++) { 
-			if(i < 5) {
-				System.out.println(" ");
-			}
-			for (int j = 0; j < k; j++) {
-				System.out.print(m[i][j] + "    ");
-			}
-			System.out.println();
+		if(maxBroj % 2 != 0) {
+			m[r/2][k/2] = maxBroj;
 		}
-		System.out.println();
+		
+		for (int i = 0; i < r; i++) { 
+			for (int j = 0; j < k; j++) {
+				System.out.print(m[i][j] + "\t");
+				
+			}
+			System.out.println("\n\t");
+		}
+		System.out.println("\t");
 	}
 }
