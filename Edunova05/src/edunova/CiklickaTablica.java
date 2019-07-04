@@ -30,17 +30,19 @@ public class CiklickaTablica {
 			while (r == rMax && k > kMin) {  // lijevo
 				m[r][k--] = broj++;			 // m [4][4--] = 1++; ... m[4][0] = 5;
 			}
+			if(broj == maxBroj) {
+				break;
+			}
 			kPoc++;
 			while (r > rMin) {				 // gore
 				m[r--][k] = broj++;			 // m[4--][0] = 5; ... m[0][0] = 9;
 			}
+			
 			rPoc++;
-			while (k < kMax) {				 // desno *BUG* udje u petlju iako je završila ciklicka tablica, krene OPET u desno i stavi NPR. na m[1][2] (predzadnji broj u 3x4 matrici) broj = 13 i ispiše 12
-				if(broj == maxBroj) {
-					break;
-				}else {
+			while (k < kMax) {				 
 				m[r][k++] = broj++;			 // m[0][0++] = 9; ... m[0][4] = 13;
-				}
+				
+				
 			}
 			kPoc--;
 			while (r < rMax - 1) {			// dolje
