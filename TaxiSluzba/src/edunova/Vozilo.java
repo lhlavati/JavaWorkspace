@@ -7,7 +7,7 @@ public class Vozilo {
 	private String snaga;
 	private int abs;
 	private String godiste;
-	private int brojvozila;
+	private int brojVozila;
 	
 	public int getSifra() {
 		return sifra;
@@ -40,9 +40,9 @@ public class Vozilo {
 		this.godiste = godiste;
 	}
 	public int getBrojvozila() {
-		return brojvozila;
+		return brojVozila;
 	}
 	public void setBrojvozila(int brojvozila) {
-		this.brojvozila = brojvozila;
+		this.brojVozila = brojvozila;
 	}
 }
