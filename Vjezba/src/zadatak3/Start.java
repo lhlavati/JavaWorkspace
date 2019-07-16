@@ -8,7 +8,7 @@ package zadatak3;
 
 public class Start {
 
-	public static void main(String[] args) {
+	public Start(){
 		
 		Ptice p = new Ptice();
 		Lastavice l = new Lastavice();
@@ -24,5 +24,8 @@ public class Start {
 			niz[i].glasajSe();
 		}
 		
+	}
+	public static void main(String[] args) {
+		new Start();
 	}
 }
