@@ -1,12 +1,13 @@
 package edunova;
 
-public class Voznja extends Vozi{
+public class Voznja{
 
 	private int cijena;
 	private String adresaPolazista;
 	private String adresaOdredista;
 	private String brojMob;
 	private int brojPutnika;
+	private int vozi;
 	
 	public int getCijena() {
 		return cijena;
@@ -38,4 +39,11 @@ public class Voznja extends Vozi{
 	public void setBrojPutnika(int brojPutnika) {
 		this.brojPutnika = brojPutnika;
 	}
+	public int getVozi() {
+		return vozi;
+	}
+	public void setVozi(int vozi) {
+		this.vozi = vozi;
+	}
+
 }

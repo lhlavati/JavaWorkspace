@@ -6,6 +6,8 @@ public class Vozi {
 
 	private Date vrijemePocetka;
 	private Date vrijemeKraja;
+	private int vozac;
+	private int vozilo;
 	
 	public Date getVrijemePocetka() {
 		return vrijemePocetka;
@@ -19,4 +21,18 @@ public class Vozi {
 	public void setVrijemeKraja(Date vrijemeKraja) {
 		this.vrijemeKraja = vrijemeKraja;
 	}
+	public int getVozac() {
+		return vozac;
+	}
+	public void setVozac(int vozac) {
+		this.vozac = vozac;
+	}
+	public int getVozilo() {
+		return vozilo;
+	}
+	public void setVozilo(int vozilo) {
+		this.vozilo = vozilo;
+	}
+	
+	
 }
