@@ -8,6 +8,13 @@ public class Vozac {
 	private String oib;
 	private String spol;
 	
+	public Vozac() {}
+	
+	public Vozac(String ime, String prezime) {
+		this.ime = ime;
+		this.prezime = prezime;
+	}
+	
 	public int getSifra() {
 		return sifra;
 	}

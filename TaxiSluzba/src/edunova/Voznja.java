@@ -1,14 +1,38 @@
 package edunova;
 
+import java.util.Date;
+
 public class Voznja{
 
+	private int sifra;
 	private int cijena;
+	private Date pocetakVoznje;
+	private Date krajVoznje;
 	private String adresaPolazista;
 	private String adresaOdredista;
 	private String brojMob;
 	private int brojPutnika;
 	private int vozi;
 	
+	
+	public int getSifra() {
+		return sifra;
+	}
+	public void setSifra(int sifra) {
+		this.sifra = sifra;
+	}
+	public Date getPocetakVoznje() {
+		return pocetakVoznje;
+	}
+	public void setPocetakVoznje(Date pocetakVoznje) {
+		this.pocetakVoznje = pocetakVoznje;
+	}
+	public Date getKrajVoznje() {
+		return krajVoznje;
+	}
+	public void setKrajVoznje(Date krajVoznje) {
+		this.krajVoznje = krajVoznje;
+	}
 	public int getCijena() {
 		return cijena;
 	}
