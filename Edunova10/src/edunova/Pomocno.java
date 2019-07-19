@@ -17,7 +17,7 @@ public class Pomocno {
 			
 			if(s.trim().length()==0) {
 				JOptionPane.
-				showConfirmDialog(null,"Obavezan unos");
+				showMessageDialog(null,"Obavezan unos");
 				continue;
 			}
 			return s;
@@ -35,13 +35,13 @@ public class Pomocno {
 				i=Integer.parseInt(
 						JOptionPane.showInputDialog(poruka));
 				if(i<=0) {
-					JOptionPane.showConfirmDialog(null, 
+					JOptionPane.showMessageDialog(null, 
 							"Broj mora biti veæi od nule");
 					continue;
 				}
 				return i;
 			} catch (Exception e) {
-				JOptionPane.showConfirmDialog(null, 
+				JOptionPane.showMessageDialog(null, 
 						"Obavezan unos broja");
 			}
 			

@@ -58,8 +58,7 @@ public class Start {
 		while(true) {
 			rb= Pomocno.unosInteger("Unesite redni broj");
 			if(rb>osobe.size()) {
-				JOptionPane.showConfirmDialog(null, 
-						"Obavezno odabir ponuđenih rednih brojeva");
+				JOptionPane.showMessageDialog(null, "Obavezno odabir ponuđenih rednih brojeva");
 				continue;
 			}
 			return rb;
@@ -106,22 +105,22 @@ public class Start {
 		switch (Pomocno.unosInteger("Unesite stavku koju biste htjeli promjeniti")) {
 		case 1:
 			o.setIme(Pomocno.unosString("Unesi ime"));
-			System.out.println("Ime uspješno promjenjeno!\n");
+			JOptionPane.showMessageDialog(null, "Ime uspješno promjenjeno!\n");
 			ispisiOsobu(o);
 			break;
 		case 2:
 			o.setPrezime(Pomocno.unosString("Unesi prezime"));
-			System.out.println("Prezime uspješno promjenjeno!\n");
+			JOptionPane.showMessageDialog(null, "Prezime uspješno promjenjeno!\n");
 			ispisiOsobu(o);
 			break;
 		case 3:
 			o.setVisina(Pomocno.unosInteger("Unesi visinu"));
-			System.out.println("Visina uspješno promjenjena!\n");
+			JOptionPane.showMessageDialog(null, "Visina uspješno promjenjena!\n");
 			ispisiOsobu(o);
 			break;
 		case 4:
 			o.setDatumRodenja(Pomocno.unosDatum("Unesi datum rodenja"));
-			System.out.println("Datum rodenja uspješno promjenjen!\n");
+			JOptionPane.showMessageDialog(null, "Datum rodenja uspješno promjenjen!\n");
 			ispisiOsobu(o);
 			break;
 		case 5:
