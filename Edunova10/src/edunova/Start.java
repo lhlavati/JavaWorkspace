@@ -1,5 +1,6 @@
 package edunova;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,12 +47,10 @@ public class Start {
 	}
 
 	private void promjenaOsobe() {
-		// u programu napraviti da su ponu�ene stare vrijednosti
+		// u programu napraviti da su ponuđene stare vrijednosti
 		izlistajOsobe();
 		Osoba o = osobe.get(redniBrojOsobe()-1);
-		o=postaviVrijednosti(o);
-		
-		
+		o=promjeniVrijednost(o);
 	}
 	
 	private int redniBrojOsobe() {
@@ -60,7 +59,7 @@ public class Start {
 			rb= Pomocno.unosInteger("Unesite redni broj");
 			if(rb>osobe.size()) {
 				JOptionPane.showConfirmDialog(null, 
-						"Obavezno odabir ponu�enih rednih brojeva");
+						"Obavezno odabir ponuđenih rednih brojeva");
 				continue;
 			}
 			return rb;
@@ -92,12 +91,52 @@ public class Start {
 		o=postaviVrijednosti(o);
 		return o;
 	}
+
+	private void ispisiOsobu(Osoba o) {
+		//Osoba o = new Osoba();
+		SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+		System.out.println("1. " + o.getIme() + "\n2. " + o.getPrezime() + "\n3. " + o.getVisina() + "\n4. " + df.format(o.getDatumRodenja()) +"\n5. Izlaz (Sve je OK!)\n");
+		
+	}
 	
+	private Osoba promjeniVrijednost(Osoba o) {
+		ispisiOsobu(o);
+		glavna_petlja:
+		while(true) {
+		switch (Pomocno.unosInteger("Unesite stavku koju biste htjeli promjeniti")) {
+		case 1:
+			o.setIme(Pomocno.unosString("Unesi ime"));
+			System.out.println("Ime uspješno promjenjeno!\n");
+			ispisiOsobu(o);
+			break;
+		case 2:
+			o.setPrezime(Pomocno.unosString("Unesi prezime"));
+			System.out.println("Prezime uspješno promjenjeno!\n");
+			ispisiOsobu(o);
+			break;
+		case 3:
+			o.setVisina(Pomocno.unosInteger("Unesi visinu"));
+			System.out.println("Visina uspješno promjenjena!\n");
+			ispisiOsobu(o);
+			break;
+		case 4:
+			o.setDatumRodenja(Pomocno.unosDatum("Unesi datum rodenja"));
+			System.out.println("Datum rodenja uspješno promjenjen!\n");
+			ispisiOsobu(o);
+			break;
+		case 5:
+			break glavna_petlja;
+		default:
+			break;
+		}
+		}
+		return o;
+	}
 	private Osoba postaviVrijednosti(Osoba o) {
 		o.setIme(Pomocno.unosString("Unesi ime"));
 		o.setPrezime(Pomocno.unosString("Unesi prezime"));
 		o.setVisina(Pomocno.unosInteger("Unesi visinu"));
-		o.setDatumRodenja(Pomocno.unosDatum("Unesi datum ro�enja"));
+		o.setDatumRodenja(Pomocno.unosDatum("Unesi datum ro�enja"));
 		return o;
 	}
 	
