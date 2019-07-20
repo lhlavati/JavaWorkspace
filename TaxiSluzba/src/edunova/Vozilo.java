@@ -9,6 +9,13 @@ public class Vozilo {
 	private String godiste;
 	private int brojVozila;
 	
+	public Vozilo() {}
+
+	public Vozilo(String marka, int brojVozila) {
+		this.marka = marka;
+		this.brojVozila = brojVozila;
+	}
+
 	public int getSifra() {
 		return sifra;
 	}
@@ -45,4 +52,10 @@ public class Vozilo {
 	public void setBrojvozila(int brojvozila) {
 		this.brojVozila = brojvozila;
 	}
+
+	@Override
+	public String toString() {
+		return "Broj vozila: " + this.brojVozila + ", " + this.marka;
+	}
+	
 }
