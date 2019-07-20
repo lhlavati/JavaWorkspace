@@ -19,14 +19,14 @@ public class Start {
 	}
 	
 	private int brojVozila() {
-		int rb;
+		int bv;
 		while(true) {
-			rb= Integer.parseInt(JOptionPane.showInputDialog("Unesite broj vašeg vozila"));
-			if(rb>vozila.size()) {
-				JOptionPane.showMessageDialog(null, "Obavezno odabir ponuðenih vozila");
+			bv= Integer.parseInt(JOptionPane.showInputDialog("Unesite broj vašeg vozila"));
+			if(bv>vozila.size() || bv == 0) {
+				JOptionPane.showMessageDialog(null, "Obavezan odabir ponuðenih vozila");
 				continue;
 			}
-			return rb;
+			return bv;
 		}
 	}
 	
@@ -50,7 +50,7 @@ public class Start {
 		ispisVozila();
 		Vozilo vo = vozila.get(brojVozila()-1);
 		JOptionPane.showMessageDialog(null, "Vozite se vozilom " + vo.getMarka() + ", broj vozila: " + vo.getBrojvozila() + "\nUgodnu voznju Vam želimo!  :)");
-
+	
 	}
 	
 	private void logIn() {
@@ -63,7 +63,12 @@ public class Start {
 		while(true) {
 			try {
 				vozac.setSifra(Integer.parseInt(JOptionPane.showInputDialog("Unesite šifru")));
+				if(String.valueOf(vozac.getSifra()).length() == 6) {
 				JOptionPane.showMessageDialog(null, "Pristup odobren! Dobar dan " + vozac.getIme().trim() + " " + vozac.getPrezime().trim() + "!");
+				}else {
+					JOptionPane.showMessageDialog(null, "Molimo unesite sifru od 6 brojeva!");
+					continue;
+				}
 				dodajVozilo();
 				break;
 			} catch (Exception e) {
