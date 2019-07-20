@@ -1,13 +1,12 @@
 package edunova;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Date;
-
 import javax.swing.JOptionPane;
 
 public class Start {
-	
-	public static final String FORMAT_DATUMA = "dd.MM.yyyy. HH:mm";
 	
 	public Start() {
 		
@@ -32,9 +31,10 @@ public class Start {
 				continue;
 			}
 		}
-		SimpleDateFormat df = new SimpleDateFormat(FORMAT_DATUMA);
+		Date now = new Date();
 		System.out.println("Vrijeme pocetka smjene");
-		vozi.setVrijemePocetka(new Date(FORMAT_DATUMA));
+		System.out.println( new SimpleDateFormat("HH:mm:ss dd.MM.yyyy.").format(Calendar.getInstance().getTime()) );
+		vozi.setVrijemePocetka(now);
 		System.out.println(vozi.getVrijemePocetka());
 	}
 	
