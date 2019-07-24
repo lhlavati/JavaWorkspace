@@ -1,5 +1,8 @@
 package edunova;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,6 +18,24 @@ public class Start {
 	public Start() {
 		
 		logIn();
+		
+	}
+	
+	private void spojSBazom() {
+		
+		SpajanjeNaBazu spajanje = new SpajanjeNaBazu();
+		try {
+			
+			PreparedStatement izraz = spajanje.getVeza().prepareStatement("SELECT vrijemePocetka FROM vozi WHERE sifra = 1");
+			ResultSet rs = izraz.executeQuery();
+			
+			System.out.println(rs.getDate("vrijemePocetka"));
+			
+			rs.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -56,7 +77,6 @@ public class Start {
 	private void logIn() {
 		
 		Vozac vozac = new Vozac();
-		Vozi vozi = new Vozi();
 			
 		vozac.setIme(JOptionPane.showInputDialog("Unesite ime:"));
 		vozac.setPrezime(JOptionPane.showInputDialog("Unesite prezime"));
@@ -76,14 +96,21 @@ public class Start {
 				continue;
 			}
 		}
-		
-		System.out.println("Vrijeme pocetka smjene");
-		System.out.println( new SimpleDateFormat("HH:mm:ss dd.MM.yyyy.").format(Calendar.getInstance().getTime()) );
-		vozi.setVrijemePocetka(new Date());
-		System.out.println(vozi.getVrijemePocetka());
 
+		pocetakSmjene();
+		
 	}
 	
+	private void pocetakSmjene() {
+		
+//		Vozi vozi = new Vozi();
+		spojSBazom();
+		System.out.println("Vrijeme pocetka smjene");
+		System.out.println( new SimpleDateFormat("HH:mm:ss dd.MM.yyyy.").format(Calendar.getInstance().getTime()) );
+//		vozi.setVrijemePocetka(spojSBazom());
+//		System.out.println(vozi.getVrijemePocetka());
+	}
+
 	public static void main(String[] args) {
 		new Start();
 	}
