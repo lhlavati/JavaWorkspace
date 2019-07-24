@@ -10,6 +10,14 @@ public class SpajanjeNaBazu {
 	
 	private Connection veza;
 
+	public Connection getVeza() {
+		return veza;
+	}
+
+	public void setVeza(Connection veza) {
+		this.veza = veza;
+	}
+
 	public SpajanjeNaBazu(){
 		
 		try {
@@ -29,13 +37,13 @@ public class SpajanjeNaBazu {
 			
 		}
 		
-		citajIzBaze();
-		
-		try {
-			veza.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//		citajIzBaze();
+//		
+//		try {
+//			veza.close();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		
 	}
 	
