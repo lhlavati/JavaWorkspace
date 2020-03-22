@@ -1,32 +1,31 @@
 package zadatak1;
 
-import javax.swing.JOptionPane;
-
-/*1. 		 Korisnik pogaða vrijednost broja definiranog u programu (može biti predefiniran, kao
-			 konstanta). Raèunalo mu vraæa poruke veæi/manji dok god ga ne pogodi. Kada ga pogodi,
-			 ispiše mu broj pokušaja (npr. “Bravo! Pogodio/la si broj zadan u programu, trebalo ti je 7
-			 pokušaja”).
-*/
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 
-		int broj = 5;
-		int broj1 = Integer.parseInt(JOptionPane.showInputDialog("Pogodite predefinirani broj:"));
-		int brojac = 0;
-		
-		while(true) {
-			if(broj1 < broj) {
-				brojac++;
-				broj1 = Integer.parseInt(JOptionPane.showInputDialog("Unesite veæi broj od prethodno unešenog:"));
-			}else if(broj1 > broj) {
-				brojac++;
-				broj1 = Integer.parseInt(JOptionPane.showInputDialog("Unesite manji broj od prethodno unešenog:"));
-			}else {
-				break;
+		Scanner input = new Scanner(System.in);
+		System.out.print("Ucitajte broj clanova niza: ");
+		int n = input.nextInt();
+		int niz[] = new int[n];
+		System.out.println("Ucitajte clanove niza:");
+		for (int i = 0; i < n; i++) {
+			niz[i] = input.nextInt();
+		}
+		int suma = 0;
+		while(suma < 200) {
+			for (int i = 0; i < niz.length; i++) {
+				if(suma >= 200) {
+					break;
+				}
+				if(niz[i] % 2 == 0) {
+					suma += niz[i];
+				}
 			}
 		}
-		System.out.println("Bravo! Pogodio/la si broj zadan u programu, trebalo ti je " + brojac + " pokušaja.");
+		System.out.println("Suma pozitivnih elemenata niza: " + suma);
+		
 	}
 }
